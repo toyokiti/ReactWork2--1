@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Step1, Step2, Step3 } from './components/index';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* step1のルーティング */}
+        <Route path={`/`} element={<Step1 />} />
+        {/* step2のルーティング */}        
+        <Route path={`/step2`} element={<Step2 />} />
+        {/* step3のルーティング */}        
+        <Route path={`/step3`} element={<Step3 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
